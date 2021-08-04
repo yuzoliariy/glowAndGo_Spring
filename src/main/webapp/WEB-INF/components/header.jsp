@@ -24,14 +24,15 @@
 
 <div class="w3-top">
     <div class="w3-bar w3-white w3-wide w3-padding w3-card">
-        <a href="<c:url value="/home"/>" class="w3-bar-item w3-button"><b>GLOW</b> </a>
+        <a href="<c:url value="/"/>" class="w3-bar-item w3-button"><b>GLOW</b> </a>
         <!-- Float links to the right. Hide them on small screens -->
         <!--<a href="#" class="w3-bar-item w3-button">categories</a>-->
         <div class="w3-right w3-hide-small" style="width:900px;">
             <c:if test="${empty sessionScope.user}">
                 <a href="<c:url value="/about"/>" class="w3-bar-item w3-button">about</a>
-                <a href="<c:url value="/productTypes"/>" class="w3-bar-item w3-button">category</a>
+                <a href="<c:url value="/getProductTypes"/>" class="w3-bar-item w3-button">category</a>
                 <a href="<c:url value="/login"/>" class="w3-bar-item w3-button">log in</a>
+                <a href="<c:url value="/workers"/>" class="w3-bar-item w3-button">our workers</a>
             </c:if>
             <c:if test="${empty sessionScope.user == false && sessionScope.user.userType == 'USER'}">
                 <a href="<c:url value="/about"/>" class="w3-bar-item w3-button">about</a>

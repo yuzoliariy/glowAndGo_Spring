@@ -1,5 +1,8 @@
 package com.config;
 
+import com.model.Product;
+import com.model.ProductType;
+import com.model.Worker;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -21,7 +24,7 @@ public class HibernateConfig {
         LocalSessionFactoryBean factoryBean = new LocalSessionFactoryBean();
         factoryBean.setConfigLocation(context.getResource("classpath:hibernate.cfg.xml"));
 
-        factoryBean.setAnnotatedClasses();
+        factoryBean.setAnnotatedClasses(Worker.class, ProductType.class, Product.class);
 
         return factoryBean;
     }
