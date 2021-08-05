@@ -36,7 +36,7 @@
             </c:if>
             <c:if test="${empty sessionScope.user == false && sessionScope.user.userType == 'USER'}">
                 <a href="<c:url value="/about"/>" class="w3-bar-item w3-button">about</a>
-                <a href="<c:url value="/productTypes"/>" class="w3-bar-item w3-button">category</a>
+                <a href="<c:url value="/getProductTypes"/>" class="w3-bar-item w3-button">category</a>
                 <a href="<c:url value="/logout"/>" class="w3-bar-item w3-button">log out</a>
                 <a href="<c:url value="/basket"/>" class="w3-bar-item w3-button">basket</a>
                 <a href="<c:url value="/profile"/>" class="w3-bar-item w3-button">profile</a>
