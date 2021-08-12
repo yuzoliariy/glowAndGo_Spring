@@ -43,9 +43,9 @@ public class ProductDaoImpl implements ProductDao {
     @Override
     public void addProductToCart(int personId, int productId) {
         sessionFactory.getCurrentSession()
-                .createNativeQuery("insert into cart(userid, productid) values (?,?)")
-                .setParameter(1, personId)
-                .setParameter(2, productId).executeUpdate();
+                .createNativeQuery("insert into cart(userId, productId) values (:personId,:productId)")
+                .setParameter("personId", personId)
+                .setParameter("productId", productId).executeUpdate();
     }
 
     @Override
@@ -64,8 +64,7 @@ public class ProductDaoImpl implements ProductDao {
     @Override
     public List<Product> getAllProductsInCart(int userId) {
         Query<Product> query = sessionFactory.getCurrentSession()
-                .createNativeQuery("select*from products inner join cart  on id = productId where userId=?")
-                .setParameter(1,userId);
+                .createNativeQuery("select*from products inner join cart  on id = productId where userId="+userId);
         return query.list();
     }
 

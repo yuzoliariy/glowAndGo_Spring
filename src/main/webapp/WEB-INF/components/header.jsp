@@ -29,26 +29,20 @@
         <!--<a href="#" class="w3-bar-item w3-button">categories</a>-->
         <div class="w3-right w3-hide-small" style="width:900px;">
             <c:if test="${empty sessionScope.user}">
-                <a href="<c:url value="/about"/>" class="w3-bar-item w3-button">about</a>
-                <a href="<c:url value="/getProductTypes"/>" class="w3-bar-item w3-button">category</a>
-                <a href="<c:url value="/login"/>" class="w3-bar-item w3-button">log in</a>
-                <a href="<c:url value="/workers"/>" class="w3-bar-item w3-button">our workers</a>
+                <a href="${pageContext.request.contextPath}/about" class="w3-bar-item w3-button">about</a>
+                <a href="${pageContext.request.contextPath}/getProductTypes" class="w3-bar-item w3-button">category</a>
+                <a href="${pageContext.request.contextPath}/login" class="w3-bar-item w3-button">log in</a>
+                <a href="${pageContext.request.contextPath}/workers" class="w3-bar-item w3-button">our workers</a>
             </c:if>
-            <c:if test="${empty sessionScope.user == false && sessionScope.user.userType == 'USER'}">
-                <a href="<c:url value="/about"/>" class="w3-bar-item w3-button">about</a>
-                <a href="<c:url value="/getProductTypes"/>" class="w3-bar-item w3-button">category</a>
-                <a href="<c:url value="/logout"/>" class="w3-bar-item w3-button">log out</a>
-                <a href="<c:url value="/basket"/>" class="w3-bar-item w3-button">basket</a>
-                <a href="<c:url value="/profile"/>" class="w3-bar-item w3-button">profile</a>
-                <a href="<c:url value="/workers"/>" class="w3-bar-item w3-button">our workers</a>
+            <c:if test="${empty sessionScope.user == false}">
+                <a href="${pageContext.request.contextPath}/about" class="w3-bar-item w3-button">about</a>
+                <a href="${pageContext.request.contextPath}/getProductTypes" class="w3-bar-item w3-button">category</a>
+                <a href="${pageContext.request.contextPath}/logout" class="w3-bar-item w3-button">log out</a>
+                <a href="${pageContext.request.contextPath}/basket" class="w3-bar-item w3-button">basket</a>
+                <a href="${pageContext.request.contextPath}/profile" class="w3-bar-item w3-button">profile</a>
+                <a href="${pageContext.request.contextPath}/workers" class="w3-bar-item w3-button">our workers</a>
             </c:if>
-            <c:if test="${empty sessionScope.user == false && sessionScope.user.userType == 'ADMIN'}">
-                <a href="<c:url value="/productTypes"/>" class="w3-bar-item w3-button">category</a>
-                <a href="<c:url value="/logout"/>" class="w3-bar-item w3-button">log out</a>
-                <a href="<c:url value="/profile"/>" class="w3-bar-item w3-button">profile</a>
-                <a href="<c:url value="/workers"/>" class="w3-bar-item w3-button">our workers</a>
-                <a href="<c:url value="/addProduct"/>" class="w3-bar-item w3-button">add product</a>
-            </c:if>
+
         </div>
     </div>
 </div>
